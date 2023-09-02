@@ -3,6 +3,12 @@
 // const apiKey = "AIzaSyCeZUIC8xD_MS4OfQes9FqIy99VGi97tI4";
 
 
+// function VideoClicked(element){
+//     // console.log("here");
+//     console.log(element);
+   
+// }
+
 // function renderUi(arr){
 // const container=document.getElementById("rightblockb2");
 
@@ -11,7 +17,7 @@
 //     videoblock.className="videocard";
 
 //     videoblock.innerHTML = `
-//                     <div class="video-image">
+//                     <div class="video-image" onclick="VideoClicked('${element.id.videoId}')">
 //                         <img src="${element.snippet.thumbnails.high.url}" alt="thumbnail">
 //                     </div>
 //                     <div class="video-desc">

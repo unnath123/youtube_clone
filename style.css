@@ -74,7 +74,7 @@ main {
   height: 90%;
   width: 100%;
   display: flex;
-  background-color: blue;
+  background-color: black;
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
   .left {
@@ -137,14 +137,14 @@ main {
 .right {
   height: 100%;
   flex: 3.3;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   overflow: auto;
 }
  .right-block1 {
   height: 10%;
   width:100%;
   background-color: #212121;
-  border: 1px solid #747272;
+  border-top: 1px solid #3b3a3a;
   display: flex;
   align-items: center;
   
@@ -163,7 +163,7 @@ main {
 
  .item {
   width: 53px;
-  height: 22px;
+  height: 18px;
   padding: 8px 12px 8px 12px;
   border-radius: 32px;
   border: 0.30000001192092896px solid ;
@@ -233,4 +233,39 @@ main {
   width:46px;
   height:46px;
   border-radius: 50%;
+}
+
+/* chanell-page */
+.ch_r-blk1{
+  width:85%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.ch_logo-desc{
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+.ch__user_name{
+  font-size: 24px;
+}
+.s-count{
+  font-size: 14px;
+  color:grey
+}
+.subs-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subs-btn button{
+  background-color: #CC0000;
+  width:116px;
+  height:36px;
+  border:none;
+  border-radius: 2px;
+  font-size:14px ;
+  font-weight: 700;
 }
