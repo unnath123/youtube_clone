@@ -76,11 +76,64 @@ main {
   display: flex;
   background-color: blue;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
   .left {
-  background-color: antiquewhite;
+  background-color:#212121; 
   height: 100%;
   flex: 0.7;
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  font-size: 13px;
+  overflow-x:scroll;
+  
 }
+
+.left-block1{
+  width:210px;
+
+}
+.nv-block{
+  width:100%;
+  height:40px;
+
+  display: flex;
+  align-items: center;
+  gap:10px;
+  /* padding-left:24px;  */ 
+}
+.nv-block:hover{
+  background-color: #303030;
+}
+.hicon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:24px;
+}
+.hdesc a{
+  text-decoration: none;
+}
+
+.divider{
+  border-bottom: 1px solid #303030;
+  width:210px;
+  margin:15px 0px;
+}
+
+.subs{
+  color: #AAAAAA;
+}
+
+.left-lastblock{
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
 .right {
   height: 100%;
   flex: 3.3;
@@ -176,4 +229,8 @@ main {
   margin-left:10px;
   margin-right:10px;
  }
-
+.ch-logo img{
+  width:46px;
+  height:46px;
+  border-radius: 50%;
+}
