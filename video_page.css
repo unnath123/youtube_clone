@@ -3,7 +3,7 @@
 * {
   padding:0;
   margin: 0;
-  color: white;
+  /* color: white; */
   /* background-color: black; */
   font-family: 'Inter', sans-serif;
 }
@@ -79,14 +79,44 @@ display: flex;
 width:85%;
 height:100%;
 margin:0px auto;
-background-color:antiquewhite;
+/* background-color:antiquewhite; */
 ;
 }
 .left{
   flex:2.5;  
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 .right{
     flex:1.5;
     background-color: #303030;
+}
+#player{
+  width:100%;
+
+}
+.videoName{
+  margin:10px 0px;
+}
+.videoName h3{
+  font-size: 18px;
+}
+.videoEleLeft p{
+  font-size: 14px;
+  color:#AAAAAA;
+}
+.VidElement1{
+  font-size: 14px;
+}
+.videoEleRight{
+  display: flex;
+  color:#FFFF
+}
+.Vele1, .videoElements{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.VidElement1 a img:hover{
+  background-color: #AAAAAA;
 }
