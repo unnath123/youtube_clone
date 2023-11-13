@@ -5,15 +5,18 @@ const apiKey = "AIzaSyCeZUIC8xD_MS4OfQes9FqIy99VGi97tI4";
 
 function VideoClicked(element){
     // console.log("here");
-    document.cookie = `video_Id=${element}; expires=Thu, 8 Sep 2023 12:00:00 UTC`;
+    document.cookie = `video_Id=${element}; expires=Thu, 25 Dec 2023 12:00:00 UTC`;
     console.log(element);
-   
+    window.location.href="./VideoPage.html"
 }
 
 function renderUi(arr){
+// document.getElementById("rightblockb2").style.display = "none"
 const container=document.getElementById("rightblockb2");
-
+console.log("ui rendered",arr)
+// document.getElementById("rightblockb2").style.display = "block"
 arr.forEach(element => {
+   
     const videoblock=document.createElement("div");
     videoblock.className="videocard";
 
@@ -55,11 +58,22 @@ async function getChannelStats(vdId){
 }
 
 async function fetchResults(){
-    let searchvalue="modi";
+    let searchvalue="Karnataka";
+    if(inputvalue.value){
+        searchvalue = inputvalue.value
+    }
+    
+    console.log("this is the value ", searchvalue)
     try{
-    let response = await fetch(`${baseurl}/search?key=${apiKey}&part=snippet&q=${searchvalue}&type=video`);
-    let data = await response.json();
+       const Spinner = document.createElement("div")
+       Spinner.className = "loader" ;
+       Spinner.id = "spinnerLoader"
+    document.getElementById("rightblockb2").appendChild(Spinner);
 
+    let response = await fetch(`${baseurl}/search?key=${apiKey}&part=snippet&q=${searchvalue}&type=video&maxResults=20`);
+    let data = await response.json();
+        // Spinner.style.display = "none";
+        // document.getElementById("spinnerLoader").style.display = "none"
     for(let i=0;i<(data.items).length;i++){
         let currentvdID=data.items[i].id.videoId;
         let currentchID=data.items[i].snippet.channelId;
@@ -71,11 +85,15 @@ async function fetchResults(){
         data.items[i].Statistics=statistics;
     }
     console.log(data.items);
+    document.getElementById("spinnerLoader").style.display = "none"
     renderUi(data.items); 
+
     }
     catch(e){
         console.log("some error occured")
     }
 }
+document.getElementById("searchIcon").addEventListener("click",fetchResults)
+
 fetchResults();
 

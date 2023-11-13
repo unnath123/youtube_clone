@@ -46,12 +46,20 @@
 
 // }
 
+function getVideoId(){
+    let cookie = document.cookie
+  .split("; ")
+  .find((row) => row.startsWith("video_Id="))
+  ?.split("=")[1];
+
+  return cookie
+}
 
 // Replace 'YOUR_API_KEY' with your actual YouTube API Key
 var player;
-function onYouTubeIframeAPIReady() {
+function onYouTubeIframeAPIReady(v_id) {
     player = new YT.Player('player', {
-        videoId: 'ehjvMGE5Ybg', // Replace 'VIDEO_ID' with the actual YouTube video ID
+        videoId: v_id, // Replace 'VIDEO_ID' with the actual YouTube video ID
         playerVars: {
             autoplay: 1, // Auto-play the video
             controls: 1, // Show video controls
@@ -93,4 +101,7 @@ function stopVideo() {
 }
 
 
-onYouTubeIframeAPIReady()
+window.onload = function(){
+    let vId = getVideoId()
+    onYouTubeIframeAPIReady(vId)
+}
